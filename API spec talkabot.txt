@@ -1,0 +1,207 @@
+# GET http://talkenginev2.herokuapp.com/v2/chatbot/response
+** untuk get response dari account_id tertentu
+
+Query PARAM : 
+id (optional) : string
+account (optional) : string
+
+==================================================================
+POST http://talkenginev2.herokuapp.com/v2/chatbot/response
+
+Request body :
+{
+  "accountID": "@gempi",
+  "template": {
+    "flow": {
+      "home": {
+        "hi": {
+          "contents": [
+            {
+              "content": [
+                "Halo juga Kak!"
+              ],
+              "type": "text"
+            },
+            {
+              "content": [
+                "Ada yang bisa bobb (chatbot) bantu Kak?"
+              ],
+              "type": "text"
+            }
+          ],
+          "next": "home",
+          "coordinate": {
+            "x": 0,
+            "y": 0
+          }
+        },
+        "pagi": {
+          "contents": [
+            {
+              "content": [
+                "Selamat pagi kak, ada yang bisa Bobb (chatbot) bantu?"
+              ],
+              "type": "text"
+            }
+          ]
+        },
+        "sore": {
+          "contents": [
+            {
+              "content": [
+                "Selamat sore kak, ada yang bisa Bobb (chatbot) bantu?"
+              ],
+              "type": "text"
+            }
+          ]
+        },
+        "malam": {
+          "contents": [
+            {
+              "content": [
+                "Selamat malam kak, ada yang bisa Bobb (chatbot) bantu?"
+              ],
+              "type": "text"
+            }
+          ]
+        },
+        "contents": [
+          {
+            "content": [
+              "Hi Kak !"
+            ],
+            "type": "text"
+          },
+          {
+            "content": [
+              "Ada yang bisa bobb (chatbot) bantu Kak?"
+            ],
+            "type": "text"
+          }
+        ]
+      }
+    }
+  }
+}
+
+===========================================================================
+# PUT http://talkenginev2.herokuapp.com/v2/chatbot/response
+** untuk update response dari account_id tertentu
+
+Request Body :
+
+{
+  "id": "60048cae6e11d41666528671",
+  "accountID": "@gempi",
+  "template": {
+    "flow": {
+      "home": {
+        "hi": {
+          "contents": [
+            {
+              "content": [
+                "Halo juga Kak!"
+              ],
+              "type": "text"
+            },
+            {
+              "content": [
+                "Ada yang bisa bobb (chatbot) bantu Kak?"
+              ],
+              "type": "text"
+            },
+            {
+              "content": [
+                "https://www.google.com/"
+              ],
+              "type": "text"
+            }
+          ],
+          "next": "home",
+          "coordinate": {
+            "x": 10,
+            "y": 10
+          }
+        },
+        "pagi": {
+          "contents": [
+            {
+              "content": [
+                "Selamat pagi kak, ada yang bisa Bobb (chatbot) bantu?"
+              ],
+              "type": "text"
+            }
+          ]
+        },
+        "sore": {
+          "contents": [
+            {
+              "content": [
+                "Selamat sore kak, ada yang bisa Bobb (chatbot) bantu?"
+              ],
+              "type": "text"
+            }
+          ]
+        },
+        "malam": {
+          "contents": [
+            {
+              "content": [
+                "Selamat malam kak, ada yang bisa Bobb (chatbot) bantu?"
+              ],
+              "type": "text"
+            }
+          ]
+        },
+        "contents": [
+          {
+            "content": [
+              "Hi Kak !"
+            ],
+            "type": "text"
+          },
+          {
+            "content": [
+              "Ada yang bisa bobb (chatbot) bantu Kak?"
+            ],
+            "type": "text"
+          }
+        ]
+      }
+    }
+  }
+}
+
+
+========================================================================
+Contoh Callback URL 
+
+http://talkenginev2.herokuapp.com/v2/multichannel/chatbot/callback/@bobbs
+
+@bobbs -> merupakan account id
+
+========================================================================
+
+# PUT http://talkenginev2.herokuapp.com/v2/chatbot/resolve/33457876
+** untuk melakukan mengaktifkan bot kembali setelah chat dengan agent
+
+33457876 -> room_id
+
+========================================================================
+
+untuk yg 3 skillset agent 
+- assigntoagent
+- assigntoonlineagent
+- assigntoagentrouting
+
+sample json nya cukup tambahin ini 
+
+"skillset":{
+          "assigntospecificagent":{
+            "id":"143310",
+            "name":"Farhan",
+            "email":"cxd@talkabot.id"
+          }
+        }
+
+
